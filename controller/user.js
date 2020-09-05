@@ -1,7 +1,4 @@
 const User = require("../models/user");
-const jwt = require("jsonwebtoken");
-const expressJwt = require("express-jwt");
-const { errorHandler } = require("../helpers/dbErrorHandlers");
 
 exports.userById = (req, res, next, id) => {
   User.findById(id).exec((err, user) => {

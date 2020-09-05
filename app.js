@@ -9,11 +9,13 @@ require("dotenv").config();
 //import routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/categroy");
+const productRoutes = require("./routes/product");
+
 // App
 const app = express();
 
 // DB
-
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
@@ -26,9 +28,12 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
+
 // Routes middleware
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
+app.use("/api", categoryRoutes);
+app.use("/api", productRoutes);
 
 const port = process.env.PORT || 8000;
 
