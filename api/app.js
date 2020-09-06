@@ -10,7 +10,7 @@ var cors = require("cors");
 //import routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
-const categoryRoutes = require("./routes/categroy");
+const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
 
 // App
